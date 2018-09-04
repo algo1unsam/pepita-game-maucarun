@@ -4,8 +4,7 @@ object pepita {
 	var property energia = 100
 	var property ciudad = buenosAires 
 	var property posicion = game.at(3,3)
-	
-	//var energiaNecesaria = null
+	var energiaNecesaria = null
 	
 	method imagen(){ 
 		var imagen
@@ -24,7 +23,7 @@ object pepita {
 	
 	method volaHacia(unaCiudad) {
 		if (ciudad != unaCiudad) {
-			if (energia>=energiaParaVolar){
+			if (energia>=energiaNecesaria){
 				self.move(unaCiudad.posicion())
 				ciudad = unaCiudad
 			}
@@ -37,12 +36,11 @@ object pepita {
 		}
 	}
 
-	method energiaParaVolar(distancia) = 15 + 5 * distancia
+	method energiaParaVolar(distancia) {
+		energiaNecesaria = 15 + 5 * distancia
+		return energiaNecesaria
+	} 
 	
-//	method energiaParaVolar(distancia){
-//		energiaNecesaria=15 + 5 * distancia
-//	}
-
 	method move(nuevaPosicion) {
 		energia -= self.energiaParaVolar(posicion.distance(nuevaPosicion))
 		self.posicion(nuevaPosicion)

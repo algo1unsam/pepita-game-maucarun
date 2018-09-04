@@ -14,6 +14,6 @@ object roque {
 	
 	method colisionPepita(){
 		pepita.come(comidaActual)
-		game.addVisualIn(comidaActual,game.at(x, y))
+		game.addVisualIn(comidaActual,game.at(9,9))
 	}
 }
