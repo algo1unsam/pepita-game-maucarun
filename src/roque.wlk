@@ -6,14 +6,17 @@ object roque {
 	
 	method imagen() = "jugador.png"
 	
-	method levantar(comida){
-		
-		comidaActual=comida
-		game.removeVisual(comida)
+	method levantar(comidaR){
+		if (comidaActual!=null){
+			game.addVisualIn(comidaActual, game.at(0.randomUpTo(10),0.randomUpTo(10)))
+		}
+		comidaActual=comidaR
+		game.removeVisual(comidaR)
 	}
 	
 	method colisionPepita(){
 		pepita.come(comidaActual)
-		game.addVisualIn(comidaActual,game.at(9,9))
+		game.addVisualIn(comidaActual,game.at(0.randomUpTo(10),0.randomUpTo(10)))
+		comidaActual=null
 	}
 }
