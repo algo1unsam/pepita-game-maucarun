@@ -23,12 +23,6 @@ program PepitaGame {
 //	TECLADO
 	keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }
 	keyboard.b().onPressDo { pepita.volaHacia(buenosAires) }
-//	keyboard.a().onPressDo { pepita.come(alpiste)
-//		game.removeVisual(alpiste)
-//	}
-//	keyboard.m().onPressDo { pepita.come(manzana)
-//		game.removeVisual(manzana)
-//	}
 	game.whenCollideDo(roque,{ algo => algo.teEncontro(roque)})
 	
 //	START

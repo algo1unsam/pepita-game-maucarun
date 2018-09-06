@@ -29,11 +29,12 @@ object pepita {
 		}
 	}
 	
-	method move(nuevaPosicion) {
+	method energiaParaVolar(distancia) = 15 + 5 * distancia
+		
+	method move(nuevaPosicion) {	
 		var distancia=posicion.distance(nuevaPosicion)
-		var energiaNecesaria=15 + 5 * distancia
-		if (energia>=energiaNecesaria){
-		energia -= energiaNecesaria
+		if (energia>=self.energiaParaVolar(distancia)){
+		energia -= self.energiaParaVolar(distancia)
 		self.posicion(nuevaPosicion)
 		}
 		else{
