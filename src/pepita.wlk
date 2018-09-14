@@ -42,7 +42,7 @@ object pepita {
 	}
 
 	method teEncontro(alguien) {
-		alguien.colisionPepita()
+		alguien.colisionAve(self)
 	}
 
 }
